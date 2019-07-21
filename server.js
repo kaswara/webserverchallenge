@@ -7,6 +7,10 @@ const bodyParser = require('body-parser');
 // Get routes
 const routes = require('./routes/routes.js')(app, fs);
 // Launch the server on port 3001.
-const server = app.listen(3001, () => {
-    console.log('listening on port %s...', server.address().port);
-});
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+};
+app.listen(port);
+console.log('listening on port %s...', port);
+
