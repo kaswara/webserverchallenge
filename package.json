@@ -5,14 +5,16 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "keywords": [],
   "author": "Arawsak Joobiark",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "express": "^4.17.1"
+    "chai": "^4.2.0",
+    "express": "^4.17.1",
+    "mocha": "file:Testing/mocha"
   },
   "devDependencies": {
     "nodemon": "^1.19.1"

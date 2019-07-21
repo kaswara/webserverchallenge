@@ -1,14 +1,12 @@
 'use strict';
 const fs = require('fs');
-const bodyParser = require('body-parser');
-///////////////////////////////////////////////////
-
-
 
 module.exports = {
 	
 	// Compute the sum of all numbers in array arr
 	sumAllOfArray: function(arr){
+		if (arr.length == 0) 
+			return 0;
 		var sum = 0;
 		for (var i in arr) {
 			sum += arr[i];
@@ -18,6 +16,12 @@ module.exports = {
 
 	// Compute the digit sum of a number x
 	computeDigitSum: function(x){
+		if (x == null)
+		return 0;
+	
+		if (typeof(x) != 'number')
+		throw new TypeError('Invalid Argument Type');
+		
 		var digitsSum = 0;
 		while (x) {
 			digitsSum += x % 10;
@@ -28,21 +32,20 @@ module.exports = {
 
 	// Read Json file from a given path pathToJsonFile
 	readJsonFileToObject: function(pathToJsonFile){
-		//app.use(bodyParser.json());
-		//app.use(bodyParser.urlencoded({ extended: true }));
-		/*const readFile = (callback, returnJson = false, filePath = pathToJsonFile, encoding = 'utf8') => {
-			fs.readFile(filePath, encoding, (err, dataObject) => {
-				if (err) {
-					throw err;
-				}
-				callback(returnJson ? JSON.parse(dataObject) : dataObject);
-			});
-		};
-		
-		return readFile;*/
-		let rawdata = fs.readFileSync(pathToJsonFile);
-		let dataObject = JSON.parse(rawdata);
+		var rawdata;
+		var dataObject;
+		if (pathToJsonFile == '')
+			throw new Error('No file');
+		try {
+				rawdata = fs.readFileSync(pathToJsonFile,'utf8');
+		} catch(err) {
+				console.error(err)
+		}
+		try {
+				dataObject = JSON.parse(rawdata)
+		} catch(err) {
+				console.error(err)
+		}
 		return dataObject;
-	//}
 	}
 };
