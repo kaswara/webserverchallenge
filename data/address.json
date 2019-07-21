@@ -1,0 +1,21 @@
+{
+	"address": {
+		"colorKeys": [
+			"A",
+			"G",
+			"Z"
+		],
+		"values": [
+			74,
+			117,
+			115,
+			116,
+			79,
+			110
+		]
+	},
+	"meta": {
+		"digits": 33,
+		"processingPattern": "d{5}+[a-z&$]"
+	}
+}
