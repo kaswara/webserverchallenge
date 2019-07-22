@@ -45,7 +45,6 @@ describe('#computeDigitSum', function(){
 });
 
 //
-
 describe('readJsonFileToObject: Empty file', function() {
 describe('#readJsonFileToObject', function(){
 	it('should return empty object if no file passed',
