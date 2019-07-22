@@ -1,11 +1,11 @@
 //
-const helpers = require('./helpers');
-const adressRoutes = (app, fs) => {
+var helpers = require('./helpers');
+var adressRoutes = (app, fs) => {
     // variables
     const dataPath = './data/address.json';
 	//Get results
 	app.post('/address', function (req, res) {
-		  let fileDataObject = helpers.readJsonFileToObject(dataPath);
+		  var fileDataObject = helpers.readJsonFileToObject(dataPath);
 		  //Sum the content of the data
 		  var sum = helpers.sumAllOfArray(fileDataObject.address.values);
 		  //Compute the digit sum
@@ -19,8 +19,8 @@ const adressRoutes = (app, fs) => {
 	
 	// GET the first color key
 	app.post('/colorkeys', function (req, res) {
-		  let fileDataObject = helpers.readJsonFileToObject(dataPath);
-		  let colorkeyA = fileDataObject.address.colorKeys[0];
+		  var fileDataObject = helpers.readJsonFileToObject(dataPath);
+		  var colorkeyA = fileDataObject.address.colorKeys[0];
 		  res.end(colorkeyA); 
 	})
 	
