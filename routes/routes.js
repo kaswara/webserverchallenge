@@ -1,6 +1,5 @@
-// load up our shiny new route for users
-const addressRoutes = require('./address');
-const appRouter = (app, fs) => {
+var addressRoutes = require('./address');
+var appRouter = (app, fs) => {
     
 	// Handle empty Post routes
     app.post('/', (req, res) => {
@@ -16,5 +15,4 @@ const appRouter = (app, fs) => {
     addressRoutes(app, fs);
 };
 
-// this line is unchanged
 module.exports = appRouter;

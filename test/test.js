@@ -1,4 +1,4 @@
-var helpers = require('C:/Users/KASWARA/Desktop/JustOn_BewerbungsAufgabe/New_Project/routes/helpers');
+var helpers = require('./../routes/helpers');
 var assert = require('assert');
 var expect = require('chai').expect;
 
